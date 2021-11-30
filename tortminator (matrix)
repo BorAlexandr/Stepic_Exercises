@@ -1,0 +1,37 @@
+http://codeforces.com/problemset/problem/330/A
+
+n, m = map(int, input().split())
+matrix = []
+revers_matrix=[]
+count=0
+for i in range(n):
+    matrix.append(list(input()))
+
+for i in range(n):
+    for j in range(m):
+        if "S" in matrix[i]:
+            continue
+        else:
+            matrix[i][j]="1"
+            count+=1
+
+for j in range(m):
+    line_2=[]
+    for i in range(n):
+        line_2.append(matrix[i][j])
+    revers_matrix.append(line_2)
+
+for i in range(m):
+    for j in range(n):
+        if "S" in revers_matrix[i]:
+            continue
+        else:
+            if revers_matrix[i][j]=="1":
+                continue
+            else:
+                count+=1
+print(count)
+
+
+
+
