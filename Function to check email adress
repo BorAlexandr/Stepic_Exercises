@@ -1,0 +1,14 @@
+
+
+
+import string
+letters = list(string.ascii_lowercase)
+letters.extend(['@', '.','_'])
+def func(email):
+    if '@' in email and '.' in email:
+        for i in email:
+            if i not in letters and not i.isdigit():
+                return 'НЕТ'
+    return 'ДА'
+
+print(func(input()))
