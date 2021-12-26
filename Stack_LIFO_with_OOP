@@ -1,0 +1,31 @@
+
+
+
+class Stack:
+    """ 
+    The __init__ method is create empty list with values (stack)
+    push - for add element in stack
+    peek - return last element in stack if stack is empty return "empty_stack"
+    pop - delete element and return it if stack is empty return "empty_stack"
+    is_empty - for check count elements in stack return bool value
+    size - for check how much elements in stack
+    """
+    def __init__(self):
+        self.values = []
+
+    def push(self, item):
+        self.values.append(item)
+
+    def pop(self):
+        del_elem = self.values.pop() if self.values else print("Empty Stack")
+        return del_elem
+
+    def peek(self):
+        last_elem = self.values[-1] if self.values else print("Empty Stack")
+        return last_elem
+
+    def is_empty(self):
+        return not bool(self.values)
+
+    def size(self):
+        return len(self.values)
